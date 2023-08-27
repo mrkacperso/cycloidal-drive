@@ -12,10 +12,10 @@ def get_settings():
     """
     :return: rotor_radius, roller_radius, eccentricity, num_of_rollers
     """
-    rotor_radius = float(10)
-    roller_radius = float(1.5)
-    eccentricity = float(0.75)
-    num_of_rollers = 10
+    rotor_radius = float(30)
+    roller_radius = float(4)
+    eccentricity = float(1)
+    num_of_rollers = 11
 
     return rotor_radius, roller_radius, eccentricity, num_of_rollers
 
@@ -26,7 +26,7 @@ def plot_cycloid(cycloid_settings, num_points):
     E = cycloid_settings[2]     # Eccentricity
     N = cycloid_settings[3]     # Number of Rollers
 
-    ax = plt.figure(figsize=(8, 8)).add_subplot()
+    # ax = plt.figure(figsize=(8, 8)).add_subplot()
 
     t = np.linspace(0, 2 * np.pi, num_points)   # generate points
 
@@ -68,9 +68,9 @@ def plot_cycloid(cycloid_settings, num_points):
 if __name__ == '__main__':
     cycloid_settings = get_settings()
 
-    print(f'Rotor radius:\t\t{cycloid_settings[0]}mm'
-          f'Rollers radius:\t\t{cycloid_settings[1]}'
-          f'Eccentricity:\t\t{cycloid_settings[2]}'
+    print(f'Rotor radius:\t\t{cycloid_settings[0]}mm\n'
+          f'Rollers radius:\t\t{cycloid_settings[1]}mm\n'
+          f'Eccentricity:\t\t{cycloid_settings[2]}mm\n'
           f'Number of rollers:\t\t{cycloid_settings[2]}')
 
     plot_cycloid(cycloid_settings, 1000)
